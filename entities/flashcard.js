@@ -1,5 +1,5 @@
-export class Flashcard {
-    constructor(id, questionText, answerText) {
+export class FlashCard {
+    constructor(questionText, answerText, id) {
         this.id = id;
         this.questionText = questionText;
         this.answerText = answerText;
@@ -9,4 +9,18 @@ export class Flashcard {
     toggle() {
         this.answerSide = !this.answerSide;
     }
+
+    get getQuestion(){
+        return this.questionText;
+    }
+
+    get getAnswer(){
+        return this.answerText;
+    }
+
+    get getId(){
+        return this.id;
+    }
+        
+
 }
