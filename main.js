@@ -25,12 +25,11 @@ function submitFlashCard(){
   const newFlashCard = document.createElement("p");
   document.body.appendChild(newFlashCard);
   const input = new AddFlashCardInputData(question.value, answer.value, newFlashCard);
-  
+
 
   //Add <p> element here with ID
   //Pass id into interactor.execute 
   interactor.execute(input, presenter);
 
-  
+
 }
-   
