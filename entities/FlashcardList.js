@@ -6,4 +6,8 @@ export class FlashCardList {
     addFlashCard(flashCard) {
         this.list.push(flashCard);
     }
+    
+    get getList(){
+        return this.list;
+    }
 }
