@@ -1,14 +1,15 @@
 import { FlashCard } from '../../entities/FlashCard.js';
 import { AddFlashCardInputBoundary} from './AddFlashCardInputBoundary.js';
 import { AddFlashCardOutputData} from './AddFlashCardOutputData.js';
-import { Presenter} from '../../frameworks/Presenter.js';
+import { ViewFlashCardLists} from '../../frameworks/ViewFlashCardLists.js';
+
 
 export class AddFlashCardInteractor extends AddFlashCardInputBoundary{
   
-  constructor(flashCardList, presenter){
+  constructor(flashCardList, viewer){
     super();
     this.flashCardList = flashCardList;
-    this.presenter = presenter;
+    this.viewer = viewer;
   }
 
   execute(inputAddFlashCard){
@@ -16,7 +17,9 @@ export class AddFlashCardInteractor extends AddFlashCardInputBoundary{
     this.flashCardList.addFlashCard(flashCard);
     
     const output = new AddFlashCardOutputData(flashCard);
-    this.presenter.present(output, inputAddFlashCard.getId);
+
+    this.viewer.renderList(this.flashCardList);
+    // this.presenter.present(output, inputAddFlashCard.getId);
   }
 
 
