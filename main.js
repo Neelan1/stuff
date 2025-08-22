@@ -1,6 +1,5 @@
 import { AddFlashCardInputData } from './usecases/AddFlashCard/AddFlashCardInputData.js';
 import { AddFlashCardInteractor } from './usecases/AddFlashCard/AddFlashCardInteractor.js';
-import { FlashCardList } from './entities/FlashcardList.js';
 import { FlashCard } from './entities/FlashCard.js';
 import { Presenter } from './frameworks/Presenter.js';
 import { ViewFlashCardLists } from './frameworks/ViewFlashCardLists.js';

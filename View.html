@@ -4,13 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>View</title>
-  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="style.css">
   
 </head>
 <body>
   <header>
     <h2>BossMan's Flashcard System View</h2>
-    <nav><a href="index.html">Home</a> <a href ="View.html">View/Edit</a> <a href="ViewScreen/Play.html">Play</a></nav>
+    <nav><a href="index.html">Home</a> <a class="selected" href="View.html">View/Edit</a> <a href="ViewScreen/Play.html">Play</a></nav>
   </header>
     <div id="content">
       <div id="create-new">
@@ -22,8 +22,8 @@
       </div>
       <div id="flashcard-view">
           <div id="heading">
-              <h2>Your Flash Cards</h2>
-              
+              <h2 id="deckHeader">Your Flash Cards</h2>
+              <input id="submit" class="button" type="button" value="+ Create Flash Card">
               <!-- <label for="deckName">Deck Name:</label>
               <input type="text" id="deckName" name="name">
 
