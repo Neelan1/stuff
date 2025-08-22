@@ -4,10 +4,11 @@
 }
 html {
     width: 100%;
-    font-size: 16px;
+    font-size: 18px;
 }
 header {
     background-color: #2f343f;
+    width: 50vw;
  
 }
 body {
@@ -20,6 +21,7 @@ body {
 }  
 #heading {
     display: flex;
+    width: 40%;
     justify-content: space-between;
     align-items:center;
 } 
@@ -53,15 +55,29 @@ label {
 }
 input {
     width: 75%;
-    height: 40px;
+    height: 50px;
     background-color: transparent;
     color: #F2F0EC ;
-    padding: 3%;
+    padding: 2%;
+    padding-bottom: 0.25rem;
+    padding-top: 0.25rem;
     border: 2px solid #F2F0EC ;
     border-radius: 14px;
     margin-top: 15px;
     margin-bottom: 15px;
-
+}
+input[type=button]  {
+  transition: all 0.2s;
+}
+input[type=button]:hover  {
+  background-color: white;
+  color: #242933;
+}
+#submit, #submitDeck {
+    width: 40%;
+    margin-left: 5%;
+    margin-right: 5%;
+    font-size: 0.85rem;
 }
 nav {
 
@@ -97,4 +113,7 @@ a:hover {
 p, h1, h2, h3 {
     color: #F2F0EC ;
     
+}
+#deckHeader {
+    width:20%
 }
