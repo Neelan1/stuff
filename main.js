@@ -1,9 +1,10 @@
 import { AddFlashCardInputData } from './usecases/AddFlashCard/AddFlashCardInputData.js';
 import { AddFlashCardInteractor } from './usecases/AddFlashCard/AddFlashCardInteractor.js';
-import { FlashCardList } from './entities/FlashCardList.js';
+import { FlashCardList } from './entities/FlashcardList.js';
 import { FlashCard } from './entities/FlashCard.js';
 import { Presenter } from './frameworks/Presenter.js';
 import { ViewFlashCardLists } from './frameworks/ViewFlashCardLists.js';
+
 
 // const view = new ViewFlashCardLists();
 // const presenter = new Presenter(view);
@@ -19,6 +20,7 @@ import { ViewFlashCardLists } from './frameworks/ViewFlashCardLists.js';
 
 // const submitButton = document.getElementById("submit");
 // submitButton.addEventListener("click", submitFlashCard);
+
 
 // function submitFlashCard(){
 //   console.log("RAN");
