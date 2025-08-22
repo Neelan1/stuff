@@ -7,6 +7,10 @@ export class FlashCardList {
     addFlashCard(flashCard) {
         this.list.push(flashCard);
     }
+
+    removeFlashCard(flashCard) {
+        this.list.splice(1, this.list.indexOf(flashCard));
+    }
     
     get getList(){
         return this.list;

@@ -3,24 +3,21 @@ import { Deck } from '../entities/Deck.js';
 import { FlashCard } from '../entities/FlashCard.js';
  export class ViewFlashCardLists{
   newDeck = new Deck();
+  input_fields = document.getElementById("create-new");
+  
   constructor(){
     console.log("ViewFlashCardLists constructor running");
     console.log("submitDeck element before anything:", document.getElementById("submitDeck"));  
 
-
+      this.input_fields.style.display = "none";
       const question = document.getElementById("question");
       const answer = document.getElementById("answer");
         
-      const submitNewFlashCardButton = document.getElementById("submit");
-        submitNewFlashCardButton.addEventListener("click", this.submitFlashCard);
-
       const submitNewDeckButton = document.getElementById("submitDeck");
         submitNewDeckButton.addEventListener("click", this.createDeck)
 
       this.populateDeck();
       this.renderDecks(this.newDeck);
-
-
  }
     //function createDeck()
     createDeck(){
@@ -83,8 +80,9 @@ import { FlashCard } from '../entities/FlashCard.js';
 
     transitionToFlashCardList(flashCardList, id){
       //Make id element invisible (ie the deck of flashCardLists invisible)
-      console.log("TRIED TRANSITIONING TO flashcard " + flashCardList.length)
+      console.log("TRIED TRANSITIONING TO flashcard ")
       this.renderFlashCardList(flashCardList);
+      document.getElementById("display_deck").style.display = "none";
     }
 
 
@@ -98,20 +96,19 @@ import { FlashCard } from '../entities/FlashCard.js';
       let flashcardListDisplay = document.createElement("div");
 
       // flashcardList.id = id="flashcardList";
-      console.log("length" + flashcardList.length)
-      for(let i = 0; i< list.length; i++){
+      for(let i = 0; i < list.length; i++){
         let flashcard = document.createElement("div");
         flashcard.id = list[i].getId;
         
-        let question = document.createElement("h2");
-        question.textContent = `${list[i].getQuestion}`;
+        let question = document.createElement("p");
+        question.textContent = `Question: ${list[i].getQuestion}`;
 
         let answer = document.createElement("p")
-        answer.textContent = `${list[i].getAnswer}`;
-        console.log(`${list[i].question} , ${list[i].getAnswer}`);
+        answer.textContent = `Answer: ${list[i].getAnswer}`;
+        // console.log(`${list[i].question} , ${list[i].getAnswer}`);
         let delButton = document.createElement("button");
         delButton.textContent = "DELETE";
-        delButton.addEventListener("click", () => delButtonFunction(flashcardList, list[i].getId));
+        delButton.addEventListener("click", () => this.delButtonFunction(flashcardList, list[i].getId, list[i]));
 
         let editButton = document.createElement("button");
         editButton.textContent = "EDIT";
@@ -121,30 +118,45 @@ import { FlashCard } from '../entities/FlashCard.js';
         flashcard.appendChild(question);
         flashcard.appendChild(answer);
         flashcard.appendChild(delButton);
+        flashcard.className = "flash-card"
         
-
-
-
         flashcardListDisplay.appendChild(flashcard);
       }
       //Need to add a return button to deck of flashCardLists
+      
       //When adding a flashcard, make backround transparent gray and have input boxes to put in question and answer
+      
+      //createFlashCardButtonTransition will be a button that is used to transition to a set of input fields of question, answer, and a button to submit the result
+      let createFlashCardButtonTransition = document.createElement("input");
+      createFlashCardButtonTransition.id = "submitFlashCardTransition";
+      createFlashCardButtonTransition.className = "button";
+      createFlashCardButtonTransition.type = "button";
+      createFlashCardButtonTransition.value = "+ Create Flash Card";
+      createFlashCardButtonTransition.addEventListener("click", this.submitFlashCardScreen);
+
+      flashcardListDisplay.appendChild(createFlashCardButtonTransition);
+      // const submitNewFlashCardButton = document.getElementById("submitFlashCard");
       outputEl.appendChild(flashcardListDisplay);
     }
-    submitFlashCard(){
+    submitFlashCardScreen(){
       console.log("RAN");
-      const newFlashCard = document.createElement("p");
-      document.body.appendChild(newFlashCard);
-      const input = new AddFlashCardInputData(question.value, answer.value, newFlashCard);
+      //submitFlashCard
+      document.getElementById("create-new").style.display = "block";
       
 
+      // const newFlashCard = document.createElement("p");
+
+      // document.body.appendChild(newFlashCard);
+      // const input = new AddFlashCardInputData(question.value, answer.value, newFlashCard);
+      
+      
       //Add <p> element here with ID
       //Pass id into interactor.execute 
       // interactor.execute(input, presenter);
     }
-    delButtonFunction(flashcardList, id){
+    delButtonFunction(flashcardList, id, flashcard){
       document.getElementById(id).remove();
-      flashcardList.removeCard(id);
+      flashcardList.removeFlashCard(flashcard);
     }
     editButtonFunction(flashcardList, id){
 
