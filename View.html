@@ -1,27 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BossMan's Flashcard System</title>
-    <link rel="stylesheet" href="style.css">
-    <script type="module" src="main.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>View</title>
+  <link rel="stylesheet" href="/style.css">
+  
 </head>
 <body>
-    <header>
-        <h2>BossMan's Flashcard System</h2>
-        <nav><a href="index.html">Home</a> <a class="selected" href ="View.html">View/Edit</a> <a href="ViewScreen/Play.html">Play</a></nav>
-    </header>
+  <header>
+    <h2>BossMan's Flashcard System View</h2>
+    <nav><a href="index.html">Home</a> <a href ="View.html">View/Edit</a> <a href="ViewScreen/Play.html">Play</a></nav>
+  </header>
     <div id="content">
-      
-        <div id="flashcard-view">
-            <div id="heading">
-                <h2>Your Flash Cards</h2>
-                <input id="submit" class="button" type="button" value="+ Create Flash Card">
-            </div>
-        </div>
+      <div id="create-new">
+          <p for="name">Your Question:</p>
+          <input type="text" id="question" name="name">
+          <p for="name">Your Answer:</p>
+          <input type="text" id="answer" name="name">
+      </div>
+      <div id="flashcard-view">
+          <div id="heading">
+              <h2>Your Flash Cards</h2>
+              <input id="submit" class="button" type="button" value="+ Create Flash Card">
+              <!-- <label for="deckName">Deck Name:</label>
+              <input type="text" id="deckName" name="name">
+
+              <label for="deckDescription">Description Of Deck:</label>
+              <input type="text" id="deckDescription" name="name"> -->
+              <input id="submitDeck" class="button" type="button" value="+ Create New Deck">
+
+          </div>
+      </div>
     </div>
 
-    <footer></footer>
+    
+      <div id = "display_deck">
+
+      </div>
+    <div id = "display_list">
+
+    </div>
+<!-- <script type="module" src="frameworks/ViewFlashCardLists.js"></script> -->
+ <script type="module">
+  import { ViewFlashCardLists } from "./frameworks/ViewFlashCardLists.js";
+
+  // run after page loads
+  window.addEventListener("DOMContentLoaded", () => {
+    const view = new ViewFlashCardLists();
+  });
+</script>
+<script type="module" src="./main.js"></script>
+
 </body>
 </html>

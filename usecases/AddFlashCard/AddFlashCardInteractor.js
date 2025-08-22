@@ -7,7 +7,6 @@ import { ViewFlashCardLists} from '../../frameworks/ViewFlashCardLists.js';
 export class AddFlashCardInteractor extends AddFlashCardInputBoundary{
   
   constructor(flashCardList, viewer){
-    super();
     this.flashCardList = flashCardList;
     this.viewer = viewer;
   }

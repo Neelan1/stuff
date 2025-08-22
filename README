@@ -1,2 +1,16 @@
+1. Remove Card
+2. Next Button
+3. Prev Button
+4. Randomize
+5. Multiple Decks
+6. Database (remembers decks and people)
+  6.5 Login/password
+7. Score/Stats(avg answer rate)
+8 Right/Wrong Buttons
+  8.5. Advanced shuffling (Makes longer/wrong one answered questions more common)
+9. Makes Runs of server
+8. Makes run off phone (app/safari)
+10. Turn animation
+11. Ai reading notes (lm notebook/gpt api)
 
 
