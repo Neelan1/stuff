@@ -74,16 +74,18 @@ nav {
     background-color: #383d47; 
 }
     
-
+.selected {
+    border-bottom: 2px solid white;
+}
 a {
     color: #F2F0EC;
-    font-size: 1.05rem;
+    font-size: 1.1rem;
     text-align: center;
     text-decoration: none;
-    width: 8vw;
+    width: 17.5%;
     padding: 0.8rem;
-    padding-left: 2vw;
-    padding-right: 2vw;
+    padding-left: 15px;
+    padding-right: 15px;
     border-bottom: 2px solid transparent;
     transition: all 0.2s;
 

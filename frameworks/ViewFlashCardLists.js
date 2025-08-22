@@ -41,7 +41,7 @@ export class ViewFlashCardLists{
       name.innerText = `${deckOfLists[i].getName}`
       
       let description = document.createElement("p");
-      description.innerText = ${deckOfLists[i].getDescription}
+      description.innerText = `${deckOfLists[i].getDescription}`;
       
       flashCardList.appendChild(name);
       flashCardList.appendChild(description);
